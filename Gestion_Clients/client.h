@@ -13,10 +13,16 @@ public:
     QString get_nom();
     QString get_prenom();
     int get_id();
+    //fonctions CRUD
     bool ajouter();
     QSqlQueryModel * afficher();
     bool supprimer(int);
     bool modifier();
+    //fonctions avancées
+    QSqlQueryModel * trier();
+    QSqlQueryModel * recherche();
+    QSqlQueryModel * statistique();
+
 private:
     QString nom,prenom;
     int id;

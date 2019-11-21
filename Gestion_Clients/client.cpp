@@ -33,15 +33,14 @@ bool Client::ajouter(){
     return query.exec();
 }
 
-
 QSqlQueryModel * Client::afficher()
 {
     QSqlQueryModel * model= new QSqlQueryModel();
 
-    model->setQuery("select * from client");
+    model->setQuery("Select * from client");
     model->setHeaderData(0, Qt::Horizontal, QObject::tr("id"));
-    model->setHeaderData(1, Qt::Horizontal, QObject::tr("Nom"));
-    model->setHeaderData(2, Qt::Horizontal, QObject::tr("Prénom"));
+    model->setHeaderData(1, Qt::Horizontal, QObject::tr("nom"));
+    model->setHeaderData(2, Qt::Horizontal, QObject::tr("prenom"));
     return model;
 }
 

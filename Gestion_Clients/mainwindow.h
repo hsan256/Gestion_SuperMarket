@@ -17,6 +17,8 @@ public:
     explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+    void display_list_client_partenaire();
+
 private slots:
     void on_Ajouter_client_clicked();
 
@@ -29,6 +31,10 @@ private slots:
     void on_supprimerpartenaire_clicked();
 
     void on_modifierPartenaire_clicked();
+
+    void on_pushButton_clicked();
+
+    void on_Rechercher_clicked();
 
 private:
     Ui::MainWindow *ui;
