@@ -32,9 +32,9 @@ private slots:
 
     void on_modifierPartenaire_clicked();
 
-    void on_pushButton_clicked();
+    void on_recherche_clicked();
 
-    void on_Rechercher_clicked();
+    void on_Trier_clicked();
 
 private:
     Ui::MainWindow *ui;

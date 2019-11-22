@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>557</width>
-    <height>500</height>
+    <width>679</width>
+    <height>580</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -19,8 +19,8 @@
      <rect>
       <x>20</x>
       <y>10</y>
-      <width>511</width>
-      <height>411</height>
+      <width>631</width>
+      <height>501</height>
      </rect>
     </property>
     <property name="currentIndex">
@@ -35,8 +35,8 @@
        <rect>
         <x>20</x>
         <y>10</y>
-        <width>471</width>
-        <height>361</height>
+        <width>591</width>
+        <height>441</height>
        </rect>
       </property>
       <property name="currentIndex">
@@ -321,9 +321,58 @@
          <rect>
           <x>20</x>
           <y>20</y>
-          <width>421</width>
+          <width>531</width>
           <height>271</height>
          </rect>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="recherche">
+        <property name="geometry">
+         <rect>
+          <x>390</x>
+          <y>300</y>
+          <width>93</width>
+          <height>28</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Rechercher</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="id_6">
+        <property name="geometry">
+         <rect>
+          <x>230</x>
+          <y>300</y>
+          <width>113</width>
+          <height>31</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label">
+        <property name="geometry">
+         <rect>
+          <x>140</x>
+          <y>310</y>
+          <width>55</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>        ID:</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="Trier">
+        <property name="geometry">
+         <rect>
+          <x>390</x>
+          <y>350</y>
+          <width>93</width>
+          <height>28</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Trier</string>
         </property>
        </widget>
       </widget>
@@ -636,7 +685,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>557</width>
+     <width>679</width>
      <height>26</height>
     </rect>
    </property>

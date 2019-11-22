@@ -10,6 +10,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    ui->tabClient->setModel(tmpClient.afficher());
 }
 
 MainWindow::~MainWindow()
@@ -112,4 +113,16 @@ void MainWindow::on_modifierPartenaire_clicked()
 void MainWindow::display_list_client_partenaire(){
     ui->tabClient->setModel(tmpClient.afficher());
     ui->tabPartenaire->setModel(tmpPartenaire.afficher());
+}
+
+void MainWindow::on_recherche_clicked()
+{
+    int id = ui->id_6->text().toInt();
+    ui->tabClient->setModel(tmpClient.recherche(id));
+}
+
+
+void MainWindow::on_Trier_clicked()
+{
+    ui->tabClient->setModel(tmpClient.trier());
 }

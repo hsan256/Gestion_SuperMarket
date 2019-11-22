@@ -19,9 +19,8 @@ public:
     bool supprimer(int);
     bool modifier();
     //fonctions avancées
+    QSqlQueryModel * recherche(int);
     QSqlQueryModel * trier();
-    QSqlQueryModel * recherche();
-    QSqlQueryModel * statistique();
 
 private:
     QString nom,prenom;

@@ -38,9 +38,9 @@ QSqlQueryModel * Client::afficher()
     QSqlQueryModel * model= new QSqlQueryModel();
 
     model->setQuery("Select * from client");
-    model->setHeaderData(0, Qt::Horizontal, QObject::tr("id"));
+    model->setHeaderData(2, Qt::Horizontal, QObject::tr("id"));
     model->setHeaderData(1, Qt::Horizontal, QObject::tr("nom"));
-    model->setHeaderData(2, Qt::Horizontal, QObject::tr("prenom"));
+    model->setHeaderData(0, Qt::Horizontal, QObject::tr("prenom"));
     return model;
 }
 
@@ -63,4 +63,26 @@ bool Client::modifier(){
     query.bindValue(":nom",nom_modif);
     query.bindValue(":prenom",prenom_modif);
     return  query.exec();
+}
+
+QSqlQueryModel * Client::recherche(int id){
+    QSqlQueryModel * model = new QSqlQueryModel();
+    QString res = QString::number(id);
+    model->setQuery("Select * From client WHERE id = " + res);
+    model->setHeaderData(0,Qt::Horizontal,QObject::tr("id"));
+    model->setHeaderData(1,Qt::Horizontal,QObject::tr("nom"));
+    model->setHeaderData(2,Qt::Horizontal,QObject::tr("prenom"));
+    return model;
+}
+
+QSqlQueryModel * Client::trier()
+{
+    QSqlQueryModel * model= new QSqlQueryModel();
+
+    model->setQuery("Select * from client\
+                         Order by id ASC");
+    model->setHeaderData(2, Qt::Horizontal, QObject::tr("id"));
+    model->setHeaderData(1, Qt::Horizontal, QObject::tr("nom"));
+    model->setHeaderData(0, Qt::Horizontal, QObject::tr("prenom"));
+    return model;
 }
