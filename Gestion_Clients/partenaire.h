@@ -17,6 +17,10 @@ public:
     QSqlQueryModel * afficher();
     bool supprimer(int);
     bool modifier();
+    QSqlQueryModel * recherche_id_part(int);
+    QSqlQueryModel * recherche_nom_part(QString);
+    QSqlQueryModel * trier_id_part();
+
 private:
     QString nom_part,prenom_part;
     int id_part;

@@ -3,7 +3,9 @@
 
 #include "client.h"
 #include "partenaire.h"
+#include "stat.h"
 #include <QMainWindow>
+#include <QVBoxLayout>
 
 namespace Ui {
 class MainWindow;
@@ -32,14 +34,34 @@ private slots:
 
     void on_modifierPartenaire_clicked();
 
-    void on_recherche_clicked();
+    void on_rechId_clicked();
 
-    void on_Trier_clicked();
+    void on_id_rech_textChanged(const QString &arg1);
+
+    void on_rechNom_clicked();
+
+    void on_nom_rech_textChanged(const QString &arg1);
+
+    void on_identifianttri_clicked();
+
+    void on_Trier_2_clicked();
+
+    void on_pushButton_clicked();
+
+    void on_Stat_currentChanged(int index);
+
+    void on_combo_part_currentTextChanged(const QString &arg1);
+
+    void on_partenaire_combo_line_textChanged(const QString &arg1);
+
+    void on_print_part_clicked();
 
 private:
     Ui::MainWindow *ui;
     Client tmpClient;
     Partenaire tmpPartenaire;
+    QVBoxLayout * mainLayout;
+    Stat s;
 };
 
 #endif // MAINWINDOW_H

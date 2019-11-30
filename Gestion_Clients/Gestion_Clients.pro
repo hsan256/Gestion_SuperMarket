@@ -4,7 +4,9 @@
 #
 #-------------------------------------------------
 
-QT       += core gui sql
+QT       +=core gui sql printsupport
+QT       +=charts
+QT       +=multimedia
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -29,13 +31,17 @@ SOURCES += \
         mainwindow.cpp \
     client.cpp \
     connection.cpp \
-    partenaire.cpp
+    partenaire.cpp \
+    stat.cpp \
+    son.cpp
 
 HEADERS += \
         mainwindow.h \
     client.h \
     connection.h \
-    partenaire.h
+    partenaire.h \
+    stat.h \
+    son.h
 
 FORMS += \
         mainwindow.ui
@@ -44,3 +50,6 @@ FORMS += \
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+DISTFILES += \
+    son/2.mp3
