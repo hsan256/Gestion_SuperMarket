@@ -17,9 +17,6 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
     ui->tabClient->setModel(tmpClient.afficher());
-    mainLayout=new QVBoxLayout;
-    mainLayout->addWidget(s.Preparechart());
-    ui->Stat->setLayout(mainLayout);
 }
 
 MainWindow::~MainWindow()
@@ -34,23 +31,24 @@ void MainWindow::on_Ajouter_client_clicked()
     QString nomClient = ui->Nom_client->text();
     QString prenomClient = ui->prenom_client->text();
     int ageClient = ui->age_client->text().toInt();
-    Client cl(idClient, nomClient, prenomClient,ageClient);
+    QString sexeClient = ui->sexe->currentText();
+    Client cl(idClient, nomClient, prenomClient, ageClient, sexeClient);
 
-    if(idClient < 999999 && ageClient > 0 && ageClient <80){
-    bool test = cl.ajouter();
-    if(test){
-        ui->tabClient->setModel(tmpClient.afficher());
-        qDebug() <<"Client ajouté";
-        QMessageBox::information(nullptr, QObject::tr("Ajouter client"),
-                    QObject::tr("client ajouté.\n"
-                                "Click Cancel to exit."), QMessageBox::Cancel);
-    }else{
-       qDebug() <<"Erreur d'ajout de client";
-       QMessageBox::critical(nullptr, QObject::tr("Ajouter client"),
-                   QObject::tr("Erreur 2 !.\n"
-                               "Click Cancel to exit."), QMessageBox::Cancel);
-}
-    }else {
+    if(idClient < 999999 && ageClient > 0 && ageClient <90){
+        bool test = cl.ajouter();
+        if(test){
+            ui->tabClient->setModel(tmpClient.afficher());
+            qDebug() <<"Client ajouté";
+            QMessageBox::information(nullptr, QObject::tr("Ajouter client"),
+                        QObject::tr("client ajouté.\n"
+                                    "Click Cancel to exit."), QMessageBox::Cancel);
+        }else{
+           qDebug() <<"Erreur d'ajout de client";
+           QMessageBox::critical(nullptr, QObject::tr("Ajouter client"),
+                       QObject::tr("Erreur 2 !.\n"
+                                   "Click Cancel to exit."), QMessageBox::Cancel);
+    }
+        }else {
         QMessageBox::critical(nullptr, QObject::tr("Erreur !"),
                     QObject::tr("Controle de Saisie!.\n"
                                 "Click Cancel to exit."), QMessageBox::Cancel);
@@ -60,7 +58,7 @@ void MainWindow::on_Ajouter_client_clicked()
 void MainWindow::on_Supprimer_client_clicked()
 {
     mettreMusique();
-    int idClient = ui->id_client_suppr->text().toInt();
+    int idClient = ui->comboidsupp->currentText().toInt();
     bool test = tmpClient.supprimer(idClient);
     if(test){
         ui->tabClient->setModel(tmpClient.afficher());
@@ -78,11 +76,12 @@ void MainWindow::on_Supprimer_client_clicked()
 void MainWindow::on_Modifier_client_clicked()
 {
     mettreMusique();
-    int idClient = ui->id_client_modif->text().toInt();
+    int idClient = ui->comboidmodif->currentText().toInt();
     QString nomClient= ui->nom_client_modif->text();
     QString prenomClient = ui->Prenom_client_modif->text();
     int ageClient = ui->age_client_modif->text().toInt();
-    Client cl(idClient, nomClient, prenomClient,ageClient);
+    QString sexeClient = ui->sexe->currentText();
+    Client cl(idClient, nomClient, prenomClient,ageClient, sexeClient);
 
     if(idClient < 999999 && ageClient > 0 && ageClient <80){
     bool test = cl.modifier();
@@ -188,8 +187,16 @@ void MainWindow::on_modifierPartenaire_clicked()
 
 void MainWindow::display_list_client_partenaire()
 {
+    //initialiser tab_client et tab_partenaire
     ui->tabClient->setModel(tmpClient.afficher());
     ui->tabPartenaire->setModel(tmpPartenaire.afficher());
+    //initaliser stat
+    mainLayout=new QVBoxLayout;
+    mainLayout->addWidget(s.Preparechart());
+    ui->Stat->setLayout(mainLayout);
+    //initaliser combo_box
+    ui->comboidsupp->setModel(tmpClient.combo_box());
+    ui->comboidmodif->setModel(tmpClient.combo_box());
 }
 
 void MainWindow::on_rechId_clicked()

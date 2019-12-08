@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>679</width>
-    <height>549</height>
+    <width>841</width>
+    <height>611</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -19,8 +19,8 @@
      <rect>
       <x>20</x>
       <y>10</y>
-      <width>631</width>
-      <height>501</height>
+      <width>791</width>
+      <height>571</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -2099,12 +2099,12 @@ PlotWidget {
        <rect>
         <x>20</x>
         <y>10</y>
-        <width>591</width>
-        <height>441</height>
+        <width>741</width>
+        <height>501</height>
        </rect>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>3</number>
       </property>
       <widget class="QWidget" name="tab_15">
        <attribute name="title">
@@ -2241,7 +2241,7 @@ PlotWidget {
          <string>Sexe:</string>
         </property>
        </widget>
-       <widget class="QComboBox" name="comboBox">
+       <widget class="QComboBox" name="sexe">
         <property name="geometry">
          <rect>
           <x>160</x>
@@ -2252,12 +2252,12 @@ PlotWidget {
         </property>
         <item>
          <property name="text">
-          <string>       Homme</string>
+          <string>Homme</string>
          </property>
         </item>
         <item>
          <property name="text">
-          <string>       Femme</string>
+          <string>Femme</string>
          </property>
         </item>
        </widget>
@@ -2279,20 +2279,10 @@ PlotWidget {
          <string>Identfiant :</string>
         </property>
        </widget>
-       <widget class="QLineEdit" name="id_client_suppr">
-        <property name="geometry">
-         <rect>
-          <x>140</x>
-          <y>90</y>
-          <width>113</width>
-          <height>22</height>
-         </rect>
-        </property>
-       </widget>
        <widget class="QPushButton" name="Supprimer_client">
         <property name="geometry">
          <rect>
-          <x>150</x>
+          <x>160</x>
           <y>150</y>
           <width>93</width>
           <height>28</height>
@@ -2305,7 +2295,7 @@ PlotWidget {
        <widget class="QLabel" name="label_24">
         <property name="geometry">
          <rect>
-          <x>150</x>
+          <x>140</x>
           <y>40</y>
           <width>141</width>
           <height>16</height>
@@ -2313,6 +2303,16 @@ PlotWidget {
         </property>
         <property name="text">
          <string>Supprimer un Client</string>
+        </property>
+       </widget>
+       <widget class="QComboBox" name="comboidsupp">
+        <property name="geometry">
+         <rect>
+          <x>140</x>
+          <y>90</y>
+          <width>121</width>
+          <height>26</height>
+         </rect>
         </property>
        </widget>
       </widget>
@@ -2346,19 +2346,6 @@ PlotWidget {
          <string>Modifier Info :</string>
         </property>
        </widget>
-       <widget class="Line" name="line_2">
-        <property name="geometry">
-         <rect>
-          <x>70</x>
-          <y>100</y>
-          <width>291</width>
-          <height>16</height>
-         </rect>
-        </property>
-        <property name="orientation">
-         <enum>Qt::Horizontal</enum>
-        </property>
-       </widget>
        <widget class="QLabel" name="label_26">
         <property name="geometry">
          <rect>
@@ -2370,19 +2357,6 @@ PlotWidget {
         </property>
         <property name="text">
          <string>Prenom :</string>
-        </property>
-       </widget>
-       <widget class="QLineEdit" name="id_client_modif">
-        <property name="geometry">
-         <rect>
-          <x>160</x>
-          <y>80</y>
-          <width>113</width>
-          <height>22</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string/>
         </property>
        </widget>
        <widget class="QLabel" name="label_27">
@@ -2487,6 +2461,16 @@ PlotWidget {
          </rect>
         </property>
        </widget>
+       <widget class="QComboBox" name="comboidmodif">
+        <property name="geometry">
+         <rect>
+          <x>160</x>
+          <y>80</y>
+          <width>111</width>
+          <height>26</height>
+         </rect>
+        </property>
+       </widget>
       </widget>
       <widget class="QWidget" name="tab_18">
        <attribute name="title">
@@ -2495,9 +2479,9 @@ PlotWidget {
        <widget class="QTableView" name="tabClient">
         <property name="geometry">
          <rect>
-          <x>20</x>
+          <x>40</x>
           <y>20</y>
-          <width>531</width>
+          <width>661</width>
           <height>271</height>
          </rect>
         </property>
@@ -2506,7 +2490,7 @@ PlotWidget {
         <property name="geometry">
          <rect>
           <x>10</x>
-          <y>340</y>
+          <y>360</y>
           <width>91</width>
           <height>22</height>
          </rect>
@@ -2516,7 +2500,7 @@ PlotWidget {
         <property name="geometry">
          <rect>
           <x>130</x>
-          <y>340</y>
+          <y>360</y>
           <width>91</width>
           <height>22</height>
          </rect>
@@ -2526,7 +2510,7 @@ PlotWidget {
         <property name="geometry">
          <rect>
           <x>10</x>
-          <y>370</y>
+          <y>390</y>
           <width>91</width>
           <height>21</height>
          </rect>
@@ -2539,7 +2523,7 @@ PlotWidget {
         <property name="geometry">
          <rect>
           <x>130</x>
-          <y>370</y>
+          <y>390</y>
           <width>91</width>
           <height>21</height>
          </rect>
@@ -2551,34 +2535,34 @@ PlotWidget {
        <widget class="QLabel" name="label">
         <property name="geometry">
          <rect>
-          <x>80</x>
-          <y>310</y>
-          <width>91</width>
-          <height>21</height>
+          <x>60</x>
+          <y>320</y>
+          <width>101</width>
+          <height>31</height>
          </rect>
         </property>
         <property name="text">
-         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt; color:#ffffff;&quot;&gt;Rechercher&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:11pt; color:#ffffff;&quot;&gt;Rechercher&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
         </property>
        </widget>
        <widget class="QLabel" name="label_2">
         <property name="geometry">
          <rect>
-          <x>390</x>
-          <y>350</y>
-          <width>41</width>
-          <height>21</height>
+          <x>590</x>
+          <y>320</y>
+          <width>51</width>
+          <height>31</height>
          </rect>
         </property>
         <property name="text">
-         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt; color:#ffffff;&quot;&gt;Trier&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:11pt; color:#ffffff;&quot;&gt;Trier&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
         </property>
        </widget>
        <widget class="QPushButton" name="Trier_2">
         <property name="geometry">
          <rect>
-          <x>440</x>
-          <y>380</y>
+          <x>630</x>
+          <y>370</y>
           <width>93</width>
           <height>31</height>
          </rect>
@@ -2590,8 +2574,8 @@ PlotWidget {
        <widget class="QPushButton" name="identifianttri">
         <property name="geometry">
          <rect>
-          <x>310</x>
-          <y>380</y>
+          <x>500</x>
+          <y>370</y>
           <width>93</width>
           <height>28</height>
          </rect>
@@ -2603,14 +2587,27 @@ PlotWidget {
        <widget class="QPushButton" name="pushButton">
         <property name="geometry">
          <rect>
-          <x>370</x>
-          <y>310</y>
+          <x>310</x>
+          <y>370</y>
           <width>93</width>
           <height>28</height>
          </rect>
         </property>
         <property name="text">
          <string>Imprimer</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_7">
+        <property name="geometry">
+         <rect>
+          <x>310</x>
+          <y>320</y>
+          <width>91</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt;Imprimer&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
         </property>
        </widget>
       </widget>
@@ -2623,7 +2620,7 @@ PlotWidget {
          <rect>
           <x>60</x>
           <y>30</y>
-          <width>461</width>
+          <width>621</width>
           <height>351</height>
          </rect>
         </property>
