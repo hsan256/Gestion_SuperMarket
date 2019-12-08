@@ -2088,7 +2088,7 @@ PlotWidget {
 }</string>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="tab_4">
      <attribute name="title">
@@ -4168,7 +4168,7 @@ PlotWidget {
 }</string>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>3</number>
       </property>
       <widget class="QWidget" name="tab">
        <attribute name="title">
@@ -4456,16 +4456,6 @@ PlotWidget {
        <attribute name="title">
         <string>Supprimer un Employe</string>
        </attribute>
-       <widget class="QLineEdit" name="lineEdit_cin_2">
-        <property name="geometry">
-         <rect>
-          <x>140</x>
-          <y>30</y>
-          <width>113</width>
-          <height>20</height>
-         </rect>
-        </property>
-       </widget>
        <widget class="QLabel" name="label_4">
         <property name="geometry">
          <rect>
@@ -4490,6 +4480,16 @@ PlotWidget {
         </property>
         <property name="text">
          <string>Supprimer</string>
+        </property>
+       </widget>
+       <widget class="QComboBox" name="comboBox_5">
+        <property name="geometry">
+         <rect>
+          <x>80</x>
+          <y>30</y>
+          <width>69</width>
+          <height>22</height>
+         </rect>
         </property>
        </widget>
       </widget>
@@ -4575,16 +4575,6 @@ PlotWidget {
          <string>NB-heure</string>
         </property>
        </widget>
-       <widget class="QLineEdit" name="lineEdit">
-        <property name="geometry">
-         <rect>
-          <x>180</x>
-          <y>0</y>
-          <width>113</width>
-          <height>20</height>
-         </rect>
-        </property>
-       </widget>
        <widget class="QLineEdit" name="lineEdit_2">
         <property name="geometry">
          <rect>
@@ -4646,6 +4636,16 @@ PlotWidget {
         </property>
         <property name="text">
          <string>Modifier</string>
+        </property>
+       </widget>
+       <widget class="QComboBox" name="comb">
+        <property name="geometry">
+         <rect>
+          <x>180</x>
+          <y>0</y>
+          <width>69</width>
+          <height>22</height>
+         </rect>
         </property>
        </widget>
       </widget>
@@ -6923,16 +6923,6 @@ PlotWidget {
        <attribute name="title">
         <string>Retirer produit</string>
        </attribute>
-       <widget class="QLineEdit" name="lineEdit_id_4">
-        <property name="geometry">
-         <rect>
-          <x>140</x>
-          <y>30</y>
-          <width>113</width>
-          <height>20</height>
-         </rect>
-        </property>
-       </widget>
        <widget class="QLabel" name="label_10">
         <property name="geometry">
          <rect>
@@ -6957,6 +6947,16 @@ PlotWidget {
         </property>
         <property name="text">
          <string>Supprimer</string>
+        </property>
+       </widget>
+       <widget class="QComboBox" name="suppr_produit">
+        <property name="geometry">
+         <rect>
+          <x>130</x>
+          <y>30</y>
+          <width>69</width>
+          <height>22</height>
+         </rect>
         </property>
        </widget>
       </widget>
@@ -7003,16 +7003,6 @@ PlotWidget {
          <string>Prix</string>
         </property>
        </widget>
-       <widget class="QLineEdit" name="lineEdit_7">
-        <property name="geometry">
-         <rect>
-          <x>140</x>
-          <y>30</y>
-          <width>113</width>
-          <height>20</height>
-         </rect>
-        </property>
-       </widget>
        <widget class="QLineEdit" name="lineEdit_8">
         <property name="geometry">
          <rect>
@@ -7044,6 +7034,16 @@ PlotWidget {
         </property>
         <property name="text">
          <string>Modifier</string>
+        </property>
+       </widget>
+       <widget class="QComboBox" name="combo2">
+        <property name="geometry">
+         <rect>
+          <x>140</x>
+          <y>30</y>
+          <width>69</width>
+          <height>22</height>
+         </rect>
         </property>
        </widget>
       </widget>
@@ -7109,7 +7109,7 @@ PlotWidget {
        </rect>
       </property>
       <property name="text">
-       <string>text</string>
+       <string>Titre</string>
       </property>
      </widget>
      <widget class="QLineEdit" name="lineEdit_sujet">
@@ -7132,7 +7132,7 @@ PlotWidget {
        </rect>
       </property>
       <property name="text">
-       <string>Sujet</string>
+       <string>Text</string>
       </property>
      </widget>
     </widget>

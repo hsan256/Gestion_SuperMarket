@@ -1,6 +1,5 @@
 #ifndef STAT_H
 #define STAT_H
-
 #include <QApplication>
 #include <QtWidgets/QMainWindow>
 #include <QDebug>
@@ -8,7 +7,6 @@
 #include <QPainter>
 #include <QMessageBox>
 #include <QtCharts/QChartView>
-
 #include <QtCharts/QPieSeries>
 
 QT_CHARTS_USE_NAMESPACE
