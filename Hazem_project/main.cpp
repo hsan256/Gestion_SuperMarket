@@ -1,21 +1,21 @@
 #include "mainwindow.h"
 #include <QApplication>
 #include <QMessageBox>
-#include "connection.h"
+#include "connexion.h"
 #include <QtDebug>
-#include <QDebug>
-
+#include "son.h"
 int main(int argc, char *argv[])
-{
-    QApplication a(argc, argv);
-    MainWindow w;
-    Connection c;
-  bool test=c.ouvrirConnection();
+{  QApplication a(argc, argv);
+
+    Connexion c;
+    mettreMusique();
+
+  bool test=c.ouvrirConnexion();
+  MainWindow w;
   if(test)
-  {
-      w.show();
-      w.display_list_client_partenaire();
-      QMessageBox::information(nullptr, QObject::tr("database is open"),
+  {w.show();
+
+      QMessageBox::critical(nullptr, QObject::tr("database is not open"),
                   QObject::tr("connection avec succés.\n"
                               "Click Cancel to exit."), QMessageBox::Cancel);
 
@@ -25,5 +25,4 @@ int main(int argc, char *argv[])
                   QObject::tr("connection failed.\n"
                               "Click Cancel to exit."), QMessageBox::Cancel);
 
-return a.exec();
-}
+    return a.exec();}

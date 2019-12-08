@@ -65,3 +65,33 @@ bool Partenaire::modifier(){
     query.bindValue(":prenom", prenom_modif);
     return  query.exec();
 }
+
+QSqlQueryModel * Partenaire::recherche_id_part(int id){
+    QSqlQueryModel * model = new QSqlQueryModel();
+    QString res = QString::number(id);
+    model->setQuery("Select * From partenaire WHERE id = " + res);
+    model->setHeaderData(0,Qt::Horizontal,QObject::tr("id"));
+    model->setHeaderData(1,Qt::Horizontal,QObject::tr("nom"));
+    model->setHeaderData(2,Qt::Horizontal,QObject::tr("prenom"));
+    return model;
+}
+
+QSqlQueryModel * Partenaire::recherche_nom_part(QString nom){
+    QSqlQueryModel * model = new QSqlQueryModel();
+    model->setQuery("Select * From partenaire WHERE nom ='" +nom+"'");
+    model->setHeaderData(0,Qt::Horizontal,QObject::tr("id"));
+    model->setHeaderData(1,Qt::Horizontal,QObject::tr("nom"));
+    model->setHeaderData(2,Qt::Horizontal,QObject::tr("prenom"));
+    return model;
+}
+
+QSqlQueryModel * Partenaire::trier_id_part()
+{
+    QSqlQueryModel * model= new QSqlQueryModel();
+    model->setQuery("Select * from partenaire\
+                         Order by id DESC");
+    model->setHeaderData(0, Qt::Horizontal, QObject::tr("id"));
+    model->setHeaderData(1, Qt::Horizontal, QObject::tr("nom"));
+    model->setHeaderData(2, Qt::Horizontal, QObject::tr("prenom"));
+    return model;
+}

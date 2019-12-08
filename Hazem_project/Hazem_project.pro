@@ -1,16 +1,16 @@
 #-------------------------------------------------
 #
-# Project created by QtCreator 2019-11-16T11:59:32
+# Project created by QtCreator 2019-11-28T20:28:45
 #
 #-------------------------------------------------
 
-QT       +=core gui sql printsupport
-QT       +=charts
-QT       +=multimedia
+QT += multimedia
+QT       += core gui sql
+QT += printsupport
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
-TARGET = Gestion_Clients
+TARGET = Hazem_project
 TEMPLATE = app
 
 # The following define makes your compiler emit warnings if you use
@@ -29,18 +29,16 @@ CONFIG += c++11
 SOURCES += \
         main.cpp \
         mainwindow.cpp \
-    client.cpp \
-    connection.cpp \
-    partenaire.cpp \
-    stat.cpp \
+    connexion.cpp \
+    parking.cpp \
+    bloc.cpp \
     son.cpp
 
 HEADERS += \
         mainwindow.h \
-    client.h \
-    connection.h \
-    partenaire.h \
-    stat.h \
+    connexion.h \
+    parking.h \
+    bloc.h \
     son.h
 
 FORMS += \
@@ -51,5 +49,5 @@ qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
-DISTFILES += \
-    son/2.mp3
+RESOURCES += \
+    resources.qrc
