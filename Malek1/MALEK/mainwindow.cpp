@@ -4,7 +4,6 @@
 #include "categorie.h"
 #include "QMessageBox"
 #include <QDebug>
-#include "stat.h"
 #include "mailing/SmtpMime"
 #include <QtWidgets>
 #include <QPrinter>
@@ -20,9 +19,6 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->label_pic->setPixmap(pix) ;
     ui->tabProduit->setModel(tmpProduit.afficher(ui->lineEdit_rech->text(),ui->comboBox_2->currentText()));
     ui->tabCategorie->setModel(tmpCategorie.afficher());
-    mainLayout=new QVBoxLayout;
-     mainLayout->addWidget(s.Preparechart());
-     ui->stat->setLayout(mainLayout);
 }
 
 MainWindow::~MainWindow(){
@@ -234,19 +230,6 @@ void MainWindow::on_pushButton_pdf_clicked()
     painter.end();
 }
 
-void MainWindow::on_Stat_currentChanged(int index)
-{
-    if(index==2)
-    {
-        delete mainLayout;
-        mainLayout=new QVBoxLayout ;
-        mainLayout->addWidget(s.Preparechart());
-
-        ui->stat->setLayout(mainLayout);
-
-    }
-}
-
 void MainWindow::on_lineEdit_rech_textChanged(){
     ui->tabCategorie->setModel(tmpProduit.afficher(ui->lineEdit_rech->text(),ui->comboBox_2->currentText()));
 }
@@ -303,51 +286,46 @@ void MainWindow::on_pushButton_ACTUALISER_clicked()
 
 void MainWindow::on_tabWidget_2_currentChanged(int index){
     if(index == 4){
-
-    }
-}
-
-void MainWindow::on_statPush_clicked()
-{
-    QSqlQuery query, queryTotal, q;
-    QBarSet* tab[50];
-    QBarSeries * series = new QBarSeries();
-    QChart * chart;
-    QStringList categories;
-    queryTotal.prepare("SELECT quantite FROM produits");
-    queryTotal.exec();
-    int quantTotal = 0;
-    while(queryTotal.next()){
-        quantTotal += queryTotal.value(0).toInt();
-    }
-        query.prepare("SELECT quantite, id_produit FROM produits");
-        query.exec();
-        int numProduit = 0, nb;
-        while(query.next()){
-                nb = query.value(0).toInt() * 100 / quantTotal;
-                QString nbS = QString::number(nb);
-                tab[numProduit] = new QBarSet("Produit: " + query.value(1).toString() + " (" + nbS + "%)");
-                *tab[numProduit] << nb;
-                series->append(tab[numProduit]);
-                numProduit++;
+        QSqlQuery query, queryTotal, q;
+        QBarSet* tab[50];
+        QBarSeries * series = new QBarSeries();
+        QChart * chart;
+        QStringList categories;
+        queryTotal.prepare("SELECT quantite FROM produits");
+        queryTotal.exec();
+        int quantTotal = 0;
+        while(queryTotal.next()){
+            quantTotal += queryTotal.value(0).toInt();
         }
-    chart = new QChart();
-    chart->addSeries(series);
-    chart->setTitle("Statistique des Produits par quantite");
-    chart->setAnimationOptions(QChart::AllAnimations);
-    categories << "Nombre de produits Totals: " + quantTotal;
-    QBarCategoryAxis *axis=new QBarCategoryAxis();
-    axis->append(categories);
-    chart->createDefaultAxes();
-    chart->setAxisX(axis,series);
-    chart->legend()->setVisible(true);
-    chart->legend()->setAlignment(Qt::AlignBottom);
+            query.prepare("SELECT quantite, id_produit FROM produits");
+            query.exec();
+            int numProduit = 0, nb;
+            while(query.next()){
+                    nb = query.value(0).toInt() * 100 / quantTotal;
+                    QString nbS = QString::number(nb);
+                    tab[numProduit] = new QBarSet("Produit: " + query.value(1).toString() + " (" + nbS + "%)");
+                    *tab[numProduit] << nb;
+                    series->append(tab[numProduit]);
+                    numProduit++;
+            }
+        chart = new QChart();
+        chart->addSeries(series);
+        chart->setTitle("Statistique des Produits par quantite");
+        chart->setAnimationOptions(QChart::AllAnimations);
+        categories << "Nombre de produits Totals: " + quantTotal;
+        QBarCategoryAxis *axis=new QBarCategoryAxis();
+        axis->append(categories);
+        chart->createDefaultAxes();
+        chart->setAxisX(axis,series);
+        chart->legend()->setVisible(true);
+        chart->legend()->setAlignment(Qt::AlignBottom);
 
-    QChartView *chartview =new QChartView(chart);
-    chartview->setRenderHint(QPainter::Antialiasing);
-    QPalette pal=qApp->palette();
-    pal.setColor(QPalette::Window,QRgb(0xffffff));
-    pal.setColor(QPalette::WindowText,QRgb(0x121212));
-    qApp->setPalette(pal);
-    ui->stat->setChart(chart);
+        QChartView *chartview =new QChartView(chart);
+        chartview->setRenderHint(QPainter::Antialiasing);
+        QPalette pal=qApp->palette();
+        pal.setColor(QPalette::Window,QRgb(0xffffff));
+        pal.setColor(QPalette::WindowText,QRgb(0x121212));
+        qApp->setPalette(pal);
+        ui->stat->setChart(chart);
+    }
 }

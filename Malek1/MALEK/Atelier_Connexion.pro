@@ -44,8 +44,7 @@ SOURCES += \
     mailing/mimepart.cpp \
     mailing/mimetext.cpp \
     mailing/quotedprintable.cpp \
-    mailing/smtpclient.cpp \
-    stat.cpp
+    mailing/smtpclient.cpp
 
 HEADERS += \
     categorie.h \
@@ -65,8 +64,7 @@ HEADERS += \
     mailing/quotedprintable.h \
     mailing/smtpclient.h \
     mailing/smtpexports.h \
-    mailing/SmtpMime \
-    stat.h
+    mailing/SmtpMime
 
 FORMS += \
         mainwindow.ui

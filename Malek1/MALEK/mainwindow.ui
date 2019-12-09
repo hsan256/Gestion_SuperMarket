@@ -2088,7 +2088,7 @@ PlotWidget {
 }</string>
     </property>
     <property name="currentIndex">
-     <number>4</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="tab_5">
      <attribute name="title">
@@ -2864,23 +2864,10 @@ PlotWidget {
       <property name="geometry">
        <rect>
         <x>10</x>
-        <y>50</y>
-        <width>601</width>
-        <height>331</height>
-       </rect>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="statPush">
-      <property name="geometry">
-       <rect>
-        <x>20</x>
         <y>10</y>
-        <width>121</width>
-        <height>23</height>
+        <width>601</width>
+        <height>371</height>
        </rect>
-      </property>
-      <property name="text">
-       <string>Afficher Statistiques</string>
       </property>
      </widget>
     </widget>

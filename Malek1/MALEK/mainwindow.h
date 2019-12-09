@@ -11,7 +11,6 @@
 #include <QMainWindow>
 #include <QVBoxLayout>
 #include "produits.h"
-#include "stat.h"
 
 namespace Ui {
     class MainWindow;
@@ -29,8 +28,6 @@ class MainWindow : public QMainWindow{
         void on_ajouterCategorie_clicked();
         void on_supprimerCategorie_clicked();
         void on_pushButton_clicked();
-        void on_Stat_currentChanged(int index);
-
        // void on_comboBox_activated(const QString &arg1);
 
         //void on_pushButton_2_clicked();
@@ -59,14 +56,10 @@ class MainWindow : public QMainWindow{
 
         void on_tabWidget_2_currentChanged(int index);
 
-        void on_statPush_clicked();
-
 private:
         Ui::MainWindow *ui;
         produits tmpProduit;
         categorie tmpCategorie;
-        QVBoxLayout * mainLayout;
-        Stat s;
 };
 
 #endif // MAINWINDOW_H
