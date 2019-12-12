@@ -19,7 +19,7 @@
      <rect>
       <x>40</x>
       <y>0</y>
-      <width>611</width>
+      <width>811</width>
       <height>461</height>
      </rect>
     </property>
@@ -2088,7 +2088,7 @@ PlotWidget {
 }</string>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="tab_4">
      <attribute name="title">
@@ -2099,8 +2099,8 @@ PlotWidget {
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>591</width>
-        <height>321</height>
+        <width>761</width>
+        <height>431</height>
        </rect>
       </property>
       <property name="styleSheet">
@@ -4168,7 +4168,7 @@ PlotWidget {
 }</string>
       </property>
       <property name="currentIndex">
-       <number>3</number>
+       <number>2</number>
       </property>
       <widget class="QWidget" name="tab">
        <attribute name="title">
@@ -4444,10 +4444,10 @@ PlotWidget {
        <widget class="QWidget" name="widget_stat" native="true">
         <property name="geometry">
          <rect>
-          <x>60</x>
-          <y>30</y>
-          <width>461</width>
-          <height>241</height>
+          <x>0</x>
+          <y>0</y>
+          <width>751</width>
+          <height>401</height>
          </rect>
         </property>
        </widget>
