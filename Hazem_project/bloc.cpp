@@ -27,6 +27,16 @@ query.bindValue(":nom",nom);
 query.bindValue(":etat",etat);
 return    query.exec();
 }
+QSqlQueryModel *bloc::rechercherbloc(QString etat)
+{
+    QSqlQueryModel *model = new QSqlQueryModel();
+        QSqlQuery query;
+        query.prepare("select * from bloc where etat= '"+etat+"' ");
+        query.exec();
+        model->setQuery(query);
+        return model;
+
+}
 
 QSqlQueryModel * bloc ::afficher()
 {

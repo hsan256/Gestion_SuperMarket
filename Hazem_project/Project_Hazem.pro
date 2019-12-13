@@ -1,16 +1,14 @@
 #-------------------------------------------------
 #
-# Project created by QtCreator 2019-11-28T20:28:45
+# Project created by QtCreator 2019-12-09T16:35:25
 #
 #-------------------------------------------------
-
-QT += multimedia
-QT       += core gui sql
 QT += printsupport
-
+QT       += core gui sql
+QT       +=charts
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
-TARGET = Hazem_project
+TARGET = Project_Hazem
 TEMPLATE = app
 
 # The following define makes your compiler emit warnings if you use
@@ -32,14 +30,14 @@ SOURCES += \
     connexion.cpp \
     parking.cpp \
     bloc.cpp \
-    son.cpp
+    stat.cpp
 
 HEADERS += \
         mainwindow.h \
     connexion.h \
     parking.h \
     bloc.h \
-    son.h
+    stat.h
 
 FORMS += \
         mainwindow.ui
@@ -48,6 +46,3 @@ FORMS += \
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
-
-RESOURCES += \
-    resources.qrc

@@ -14,6 +14,9 @@ public:
     QSqlQueryModel * afficher();
     bool supprimer(int);
     bool modifier(parking);
+    QSqlQueryModel * combox8();
+    QSqlQueryModel *trierparking(QString);
+    QSqlQueryModel *rechercherparking(QString Num_place);
 private:
     int Num_place;
     QString Etat_place;

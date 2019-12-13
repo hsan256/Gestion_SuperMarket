@@ -15,6 +15,7 @@ public:
     bool modifier(bloc);
     QSqlQueryModel * afficher();
     bool supprimer(QString);
+    QSqlQueryModel *rechercherbloc(QString etat);
 private:
     QString nom;
     int capacite;

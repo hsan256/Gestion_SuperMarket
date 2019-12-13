@@ -1,5 +1,0 @@
-<RCC>
-    <qresource prefix="/new/prefix1">
-        <file>2.mp3</file>
-    </qresource>
-</RCC>

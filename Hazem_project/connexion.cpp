@@ -12,7 +12,7 @@ bool Connexion::ouvrirConnexion()
 if (db.open())
     test=true;
 
-else throw QString ("Erreur Paramétres"+db.lastError().text());
+//else throw QString ("Erreur Paramétres"+db.lastError().text());
 return  test;
 }
 void Connexion::fermerConnexion()

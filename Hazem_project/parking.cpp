@@ -52,3 +52,25 @@ bool parking :: modifier (parking p)
     return query.exec();
 
 }
+QSqlQueryModel * parking::combox8(){
+    QSqlQueryModel * model = new QSqlQueryModel();
+    model->setQuery("Select Num_place from parking");
+    return model;
+}
+QSqlQueryModel *parking::trierparking(QString col )
+{
+    QSqlQueryModel *model= new QSqlQueryModel() ;
+    model->setQuery("select Num_place from parking order by "+col);
+   return model ;
+}
+QSqlQueryModel *parking::rechercherparking(QString Num_place)
+{
+    QSqlQueryModel *model = new QSqlQueryModel();
+        QSqlQuery query;
+        query.prepare("select * from parking where Num_place= '"+Num_place+"' ");
+        query.exec();
+        model->setQuery(query);
+        return model;
+
+}
+
