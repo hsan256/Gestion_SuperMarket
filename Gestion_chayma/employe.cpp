@@ -181,3 +181,8 @@ QSqlQueryModel * Employe::recherche(int cin){
     model->setHeaderData(5,Qt::Horizontal,QObject::tr("nbheure"));
     return model;
 }
+QSqlQueryModel * Employe::combobox(){
+    QSqlQueryModel * model = new QSqlQueryModel();
+    model->setQuery("Select cin from Employe ");
+    return  model;
+}

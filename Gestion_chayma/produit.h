@@ -22,6 +22,7 @@ public:
     QSqlQueryModel * recherche_code(int);
     QSqlQueryModel * recherche_nbr(int);
     QSqlQueryModel * recherche_prix(int);
+    QSqlQueryModel * combo2();
   //  QSqlQueryModel * stat();
 private:
     int code ;

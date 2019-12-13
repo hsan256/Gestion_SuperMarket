@@ -15,7 +15,7 @@ int main(int argc, char *argv[])
   {
       w.show();
       w.display_list_client_partenaire();
-      QMessageBox::critical(nullptr, QObject::tr("database is open"),
+      QMessageBox::information(nullptr, QObject::tr("database is open"),
                   QObject::tr("connection avec succés.\n"
                               "Click Cancel to exit."), QMessageBox::Cancel);
 

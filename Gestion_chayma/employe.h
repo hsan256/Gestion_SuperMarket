@@ -26,6 +26,7 @@ class Employe
      QSqlQueryModel * tri_salaire();
      QSqlQueryModel * tri_nbheure();
      QSqlQueryModel * recherche(int);
+     QSqlQueryModel * combobox();
      //QSqlQueryModel * stat();
 private:
     QString nom,prenom;

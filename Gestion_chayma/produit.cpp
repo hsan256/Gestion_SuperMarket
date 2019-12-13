@@ -136,3 +136,8 @@ QSqlQueryModel * produit::recherche_prix(int prix){
     model->setHeaderData(2,Qt::Horizontal,QObject::tr("prix"));
     return model;
 }
+QSqlQueryModel * produit::combo2(){
+    QSqlQueryModel * model = new QSqlQueryModel();
+    model->setQuery("Select code from produit ");
+    return  model;
+}
